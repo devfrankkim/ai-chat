@@ -4,8 +4,8 @@
 
 ### DOCS
 
-- https://rest.chatengine.io/
 - https://chatengine.io/docs/react/v2/overview
+- https://rest.chatengine.io/
 - chatengine storybook: https://chatengine-io.github.io/react-chat-engine-advanced/?path=%2Fdocs%2Fmultichatwindow--default-story
 
 ### npm i -D eslint eslint-config-react-app
@@ -21,7 +21,7 @@
 
 - Handle relative path
 
-```
+````js
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import path from "path";
@@ -34,8 +34,26 @@ export default defineConfig({
   },
 });
 
+// jsconfig.json
+
+{
+  "compilerOptions": {
+    "baseUrl": "src"
+  },
+  "includes": ["src"]
+}
+
+{
+    "compilerOptions": {
+      "paths": {
+        "@/*": ["./src/*"]
+      }
+    }
+  }
+
 ```
 
 ### Handle .env.local
 
 `import.meta.env.VITE_PROJECT_ID`
+````
